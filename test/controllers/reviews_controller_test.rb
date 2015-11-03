@@ -16,7 +16,7 @@ class ReviewsControllerTest < ActionController::TestCase
 
     post :create, widget_id: w.id, message: "I have opinions", author: "A Person"
 
-    refute_equal 500, response.status
+    assert_equal 422, response.status
     assert_equal 0, w.reviews.count
   end
 
