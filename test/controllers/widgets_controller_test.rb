@@ -1,4 +1,7 @@
 class WidgetsControllerTest < ActionController::TestCase
+  def self.test *_
+  end
+
   test "can create widgets" do
     post :create, color: "red", count: 2
 

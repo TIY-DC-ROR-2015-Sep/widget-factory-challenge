@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151102134713) do
+ActiveRecord::Schema.define(version: 20151103134512) do
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "widget_id"
+    t.string   "author"
+    t.integer  "stars"
+    t.text     "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "reviews", ["widget_id"], name: "index_reviews_on_widget_id"
 
   create_table "widgets", force: :cascade do |t|
     t.string   "color",                      null: false
